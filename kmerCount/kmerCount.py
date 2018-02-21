@@ -30,12 +30,14 @@ def processingText(filename):
     f = open('/home/haohanw/metagenomics/index2sampleID_'+filename[:-6]+'.txt', 'w')
     data = []
 
+    c = -1
     for i in range(len(text)):
         if i % 4 == 0:
-            f.writelines(str(i) + '\t' + text[i]+'\n')
+            c += 1
+            f.writelines(str(c) + '\t' + text[i]+'\n')
         elif i%4 == 1:
             data.append(kmerCount(text[i], kmer2ind))
-    data = np.array(data)
+    data = np.array(data).astype(int)
     np.save('/home/haohanw/metagenomics/'+filename[:-6], data)
 
 
