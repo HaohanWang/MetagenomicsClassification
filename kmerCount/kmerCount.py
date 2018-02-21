@@ -27,7 +27,7 @@ def processingText(filename):
     kmer2ind = generateKmerDic()
     text = [line.strip() for line in open('/home/haohanw/metagenomics/'+filename)]
 
-    f = open('/home/haohanw/metagenomics/index2sampleID_'+filename[:-6]+'.txt')
+    f = open('/home/haohanw/metagenomics/index2sampleID_'+filename[:-6]+'.txt', 'w')
     data = []
 
     for i in range(len(text)):
