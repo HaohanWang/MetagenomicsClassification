@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#SBATCH --partition=compute-0-16
+
 # set the number of nodes
 #SBATCH --nodes=1
 
