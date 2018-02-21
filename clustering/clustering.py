@@ -19,6 +19,6 @@ def clustering(filename):
     f.close()
 
 if __name__ == '__main__':
-    filename = 'smith_low_contamination_25_filterMouse.fastq'
+    filename = 'mellon_high_contamination_1_filterMouse.fastq'
     clustering(filename)
 
