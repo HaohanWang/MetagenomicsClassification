@@ -1,10 +1,9 @@
 #!/bin/bash
 
-# set the number of nodes and processes per node
-#SBATCH --nodes=2
+#SBATCH --partition=compute
 
-# set the number of tasks (processes) per node.
-#SBATCH --ntasks-per-node=16
+# set the number of nodes
+#SBATCH --nodes=1
 
 # set max wallclock time
 #SBATCH --time=100:00:00
