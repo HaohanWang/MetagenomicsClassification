@@ -30,6 +30,7 @@ def processingText(filename):
     text = [line.strip() for line in open('/home/haohanw/metagenomics/'+filename)]
 
     f = open('/home/haohanw/metagenomics/index2sampleID_'+filename[:-6]+'.txt', 'w')
+    names = []
     data = []
 
     c = -1
@@ -37,11 +38,12 @@ def processingText(filename):
         if i % 4 == 0:
             c += 1
             f.writelines(str(c) + '\t' + text[i]+'\n')
+            names.append(text[i])
         elif i%4 == 1:
             data.append(kmerCount(text[i], kmer2ind))
     data = np.array(data).astype(int)
-    np.save('/home/haohanw/metagenomics/'+filename[:-6], data)
-
+    # np.save('/home/haohanw/metagenomics/'+filename[:-6], data)
+    return data, names
 
 if __name__ == '__main__':
     filename = 'smith_low_contamination_25_filterMouse.fastq'
