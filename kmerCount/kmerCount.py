@@ -19,7 +19,9 @@ def generateKmerDic(k=4):
 def kmerCount(s, kmer2Ind):
     data = np.zeros(4**4)
     for i in range(len(s)-4):
-        data[kmer2Ind[s[i:i+4]]] += 1
+        k = s[i:i+4]
+        if k in kmer2Ind:
+            data[kmer2Ind[k]] += 1
     return data
 
 
