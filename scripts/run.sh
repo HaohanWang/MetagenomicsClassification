@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#SBATCH --partition=pool3-bigmem
+#SBATCH --partition=interactive
 
 # set the number of nodes
 #SBATCH --nodes=1
