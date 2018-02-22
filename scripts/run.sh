@@ -18,4 +18,4 @@
 #SBATCH --mail-user=haohanw@andrew.cmu.edu
 
 # run the application
-/home/haohanw/python2.7/bin/python clustering/clustering.py
+/home/haohanw/python2.7/bin/python /home/haohanw/metaGenomicsClustering/scripts/clustering/clustering.py
