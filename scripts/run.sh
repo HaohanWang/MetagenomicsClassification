@@ -1,12 +1,12 @@
 #!/bin/bash
 
-#SBATCH --partition=compute
+#SBATCH --partition=pool3-bigmem
 
 # set the number of nodes
 #SBATCH --nodes=1
 
 # set max wallclock time
-#SBATCH --time=100:00:00
+#SBATCH --time=4:00:00
 
 # set name of job
 #SBATCH --job-name=smith
