@@ -5,7 +5,7 @@
 # set the number of nodes
 #SBATCH --nodes=1
 
-#SBATCH --MemPerNode=40000
+#SBATCH --mem=40000
 
 # set max wallclock time
 #SBATCH --time=4:00:00
