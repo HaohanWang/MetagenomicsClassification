@@ -18,4 +18,4 @@
 #SBATCH --mail-user=haohanw@andrew.cmu.edu
 
 # run the application
-python clustering/clustering.py
+/home/haohanw/python2.7/bin/python clustering/clustering.py
