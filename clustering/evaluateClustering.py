@@ -32,7 +32,7 @@ def matchClusteringLabels(filename):
     sorted_result1 = sorted(result1.items(), key=operator.itemgetter(1))
     for (n, v) in sorted_result1:
         if n in result2:
-            f.writelines(n+'\t'+str(v)+'\t'+str(result2[n]))
+            f.writelines(n+'\t'+str(v)+'\t'+str(result2[n]) + '\n')
     f.close()
 
 if __name__ == '__main__':
