@@ -16,7 +16,7 @@ def matchClusteringLabels(filename):
     for line in text:
         items = line.split('\t')
         rs1.append(int(items[1]))
-        rs2.append(result[[items[0]]])
+        rs2.append(result[items[0]])
 
     print 'organizing results, now calculating'
 
