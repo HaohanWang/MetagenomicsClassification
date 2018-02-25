@@ -2,6 +2,8 @@ __author__ = 'Haohan Wang'
 
 import numpy as np
 
+import sys
+
 def icoCalculate(s):
     mer1 = {}
     mer3 = {}
@@ -63,5 +65,5 @@ def processingText(filename):
     # return data, names
 
 if __name__ == '__main__':
-    filename = 'mellon_high_contamination_1_filterMouse.fastq'
+    filename = sys.argv[1]
     processingText(filename)

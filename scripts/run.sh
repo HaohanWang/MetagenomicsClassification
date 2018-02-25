@@ -11,7 +11,7 @@
 #SBATCH --time=4:00:00
 
 # set name of job
-#SBATCH --job-name=smith
+#SBATCH --job-name=mellon
 
 # mail alert at start, end and abortion of execution
 #SBATCH --mail-type=ALL
@@ -20,4 +20,30 @@
 #SBATCH --mail-user=haohanw@andrew.cmu.edu
 
 # run the application
-/home/haohanw/python2.7/bin/python /home/haohanw/metaGenomicsClustering/clustering/clustering.py > logs.txt
+/home/haohanw/python2.7/bin/python /home/haohanw/metaGenomicsClustering/kmerCount/icoFeature.py mellon_high_contamination_1_filterMouse.fastq
+/home/haohanw/python2.7/bin/python /home/haohanw/metaGenomicsClustering/kmerCount/icoFeature.py mellon_high_contamination_2_filterMouse.fastq
+/home/haohanw/python2.7/bin/python /home/haohanw/metaGenomicsClustering/kmerCount/icoFeature.py mellon_high_contamination_3_filterMouse.fastq
+/home/haohanw/python2.7/bin/python /home/haohanw/metaGenomicsClustering/kmerCount/icoFeature.py mellon_high_contamination_4_filterMouse.fastq
+/home/haohanw/python2.7/bin/python /home/haohanw/metaGenomicsClustering/kmerCount/icoFeature.py mellon_low_contamination_1_filterMouse.fastq
+/home/haohanw/python2.7/bin/python /home/haohanw/metaGenomicsClustering/kmerCount/icoFeature.py mellon_low_contamination_2_filterMouse.fastq
+/home/haohanw/python2.7/bin/python /home/haohanw/metaGenomicsClustering/kmerCount/icoFeature.py mellon_low_contamination_3_filterMouse.fastq
+/home/haohanw/python2.7/bin/python /home/haohanw/metaGenomicsClustering/kmerCount/icoFeature.py mellon_low_contamination_4_filterMouse.fastq
+/home/haohanw/python2.7/bin/python /home/haohanw/metaGenomicsClustering/kmerCount/icoFeature.py mellon_low_contamination_5_filterMouse.fastq
+/home/haohanw/python2.7/bin/python /home/haohanw/metaGenomicsClustering/kmerCount/icoFeature.py mellon_low_contamination_6_filterMouse.fastq
+/home/haohanw/python2.7/bin/python /home/haohanw/metaGenomicsClustering/kmerCount/icoFeature.py mellon_low_contamination_7_filterMouse.fastq
+/home/haohanw/python2.7/bin/python /home/haohanw/metaGenomicsClustering/kmerCount/icoFeature.py mellon_low_contamination_8_filterMouse.fastq
+/home/haohanw/python2.7/bin/python /home/haohanw/metaGenomicsClustering/kmerCount/icoFeature.py mellon_low_contamination_9_filterMouse.fastq
+
+/home/haohanw/python2.7/bin/python /home/haohanw/metaGenomicsClustering/kmerCount/kmerCount.py mellon_high_contamination_1_filterMouse.fastq
+/home/haohanw/python2.7/bin/python /home/haohanw/metaGenomicsClustering/kmerCount/kmerCount.py mellon_high_contamination_2_filterMouse.fastq
+/home/haohanw/python2.7/bin/python /home/haohanw/metaGenomicsClustering/kmerCount/kmerCount.py mellon_high_contamination_3_filterMouse.fastq
+/home/haohanw/python2.7/bin/python /home/haohanw/metaGenomicsClustering/kmerCount/kmerCount.py mellon_high_contamination_4_filterMouse.fastq
+/home/haohanw/python2.7/bin/python /home/haohanw/metaGenomicsClustering/kmerCount/kmerCount.py mellon_low_contamination_1_filterMouse.fastq
+/home/haohanw/python2.7/bin/python /home/haohanw/metaGenomicsClustering/kmerCount/kmerCount.py mellon_low_contamination_2_filterMouse.fastq
+/home/haohanw/python2.7/bin/python /home/haohanw/metaGenomicsClustering/kmerCount/kmerCount.py mellon_low_contamination_3_filterMouse.fastq
+/home/haohanw/python2.7/bin/python /home/haohanw/metaGenomicsClustering/kmerCount/kmerCount.py mellon_low_contamination_4_filterMouse.fastq
+/home/haohanw/python2.7/bin/python /home/haohanw/metaGenomicsClustering/kmerCount/kmerCount.py mellon_low_contamination_5_filterMouse.fastq
+/home/haohanw/python2.7/bin/python /home/haohanw/metaGenomicsClustering/kmerCount/kmerCount.py mellon_low_contamination_6_filterMouse.fastq
+/home/haohanw/python2.7/bin/python /home/haohanw/metaGenomicsClustering/kmerCount/kmerCount.py mellon_low_contamination_7_filterMouse.fastq
+/home/haohanw/python2.7/bin/python /home/haohanw/metaGenomicsClustering/kmerCount/kmerCount.py mellon_low_contamination_8_filterMouse.fastq
+/home/haohanw/python2.7/bin/python /home/haohanw/metaGenomicsClustering/kmerCount/kmerCount.py mellon_low_contamination_9_filterMouse.fastq

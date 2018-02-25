@@ -1,6 +1,7 @@
 __author__ = 'Haohan Wang'
 
 import numpy as np
+import sys
 
 def generateKmerDic(k=4):
     cs = ['A', 'C', 'G', 'T']
@@ -46,5 +47,5 @@ def processingText(filename):
     # return data, names
 
 if __name__ == '__main__':
-    filename = 'smith_low_contamination_25_filterMouse.fastq'
+    filename = sys.argv[1]
     processingText(filename)
