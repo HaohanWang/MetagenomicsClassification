@@ -42,8 +42,8 @@ def processingText(filename):
         elif i%4 == 1:
             data.append(kmerCount(text[i], kmer2ind))
     data = np.array(data).astype(int)
-    # np.save('/home/haohanw/metagenomics/'+filename[:-6], data)
-    return data, names
+    np.save('/home/haohanw/metagenomics/kmer/'+filename[:-18], data)
+    # return data, names
 
 if __name__ == '__main__':
     filename = 'smith_low_contamination_25_filterMouse.fastq'
