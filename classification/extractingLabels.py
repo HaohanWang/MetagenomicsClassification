@@ -1,5 +1,6 @@
 __author__ = 'Haohan Wang'
 
+import numpy as np
 
 def extractingLabels():
     filenames = ['mellon_low_contamination_1', 'mellon_low_contamination_2', 'mellon_low_contamination_3',
@@ -27,6 +28,7 @@ def extractingLabels():
                     f.writelines(k + '\t' + str(m[l]) + '\n')
 
         f.close()
+    np.save('/home/haohanw/metagenomics/Kaiju/'+filenames[0][:-2], m)
 
 
 if __name__ == '__main__':
