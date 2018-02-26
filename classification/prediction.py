@@ -7,6 +7,33 @@ import numpy as np
 from sklearn.svm import SVC
 from sklearn.metrics import accuracy_score
 
+def trainingEnsemble(data, label):
+    batchSize = 10000
+    s = data.shape[0]
+    nb = s/batchSize
+    l = []
+    for i in range(nb):
+        model = SVC(class_weight='balanced', max_iter=10000)
+        dataTmp = data[i*batchSize:(i+1)*batchSize,:]
+        labelTmp = label[i*batchSize:(i+1)*batchSize]
+        model.fit(dataTmp, labelTmp)
+        l.append(model)
+    return l
+
+def predictingEnsemble(data, lm):
+    from scipy import stats
+
+    result = None
+    for i in range(len(lm)):
+        if i == 0:
+            result = np.array(lm[i].predict(data))
+        else:
+            result = np.append(result, np.array(lm[i].predict(data), 1))
+    predict = stats.mode(result, 1)[0].reshape(result.shape[0])
+    return predict
+
+
+
 def constructData(ind, dataCate, featureCate):
     if featureCate == 'kmer':
         features = np.load('/home/haohanw/metagenomics/kmer/'+dataCate + '_contamination_' + str(ind) + '.npy')
@@ -63,10 +90,9 @@ def trainValidate(dataCate, featureCate):
         f = open('predictionResult_'+ dataCate + '_' + featureCate + '_' + str(ind) + '.txt', 'w')
         data, label, reData, reLabels = constructData(ind, dataCate, featureCate)
 
-        model = SVC(class_weight='balanced', max_iter=10000)
-        model.fit(data, label)
+        lm = trainingEnsemble(data, label)
 
-        predL = model.predict(reData)
+        predL = predictingEnsemble(reData, lm)
 
         for i in range(len(reLabels)):
             f.writelines(reLabels[i]+'\t' + str(predL[i]) + '\n')
