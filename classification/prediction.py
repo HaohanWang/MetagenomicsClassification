@@ -44,6 +44,9 @@ def predictingEnsemble(data, lm):
             r = predict
         else:
             r = np.append(r, predict)
+    dataTmp = data[nb*batchSize:, :]
+    predict = predictingWithEnsemble(dataTmp, lm)
+    r = np.append(r, predict)
     return r
 
 def constructData(ind, dataCate, featureCate):
