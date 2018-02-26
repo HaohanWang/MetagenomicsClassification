@@ -5,10 +5,10 @@
 # set the number of nodes
 #SBATCH --nodes=1
 
-#SBATCH --mem=40000
+#SBATCH --mem=80000
 
 # set max wallclock time
-#SBATCH --time=4:00:00
+#SBATCH --time=8:00:00
 
 # set name of job
 #SBATCH --job-name=mellon
@@ -21,5 +21,5 @@
 
 # run the script
 
-/home/haohanw/python2.7/bin/python /home/haohanw/metaGenomicsClustering/classification/prediction.py mellon_high ico
-# /home/haohanw/python2.7/bin/python /home/haohanw/metaGenomicsClustering/classification/prediction.py mellon_low ico
+# /home/haohanw/python2.7/bin/python /home/haohanw/metaGenomicsClustering/classification/prediction.py mellon_high ico
+/home/haohanw/python2.7/bin/python /home/haohanw/metaGenomicsClustering/classification/prediction.py mellon_low ico
