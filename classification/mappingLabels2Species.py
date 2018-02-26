@@ -45,7 +45,7 @@ def collectPredictionResults(dataCate):
                     f.writelines(k + '\t' + l + '\n')
                     written = True
             if not written:
-                f.writelines(k+'\t'+result[k]+'\n')
+                f.writelines(k+'\t'+str(result[k])+'\n')
 
         f.close()
 
