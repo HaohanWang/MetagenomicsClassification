@@ -72,7 +72,7 @@ def constructData(ind, dataCate, featureCate):
             remainingIdx.append(ind)
             remainingLabels.append(k)
 
-    reData = features[np.array(remainingIdx),:]
+    reData = features[np.array(remainingIdx).astype(int),:]
 
     return data, label, reData, remainingLabels
 
