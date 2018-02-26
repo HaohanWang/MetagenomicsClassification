@@ -5,6 +5,7 @@ import sys
 import numpy as np
 
 from sklearn.svm import SVC
+from sklearn.naive_bayes import GaussianNB
 from sklearn.metrics import accuracy_score
 
 def constructData(ind, dataCate, featureCate):
@@ -59,10 +60,12 @@ def trainValidate(dataCate, featureCate):
         teData = data[s:, :]
         teLabel = label[s:]
 
-        model = SVC(class_weight='balanced', max_iter=10000)
+        # model = SVC(class_weight='balanced', max_iter=10000)
+        model = GaussianNB()
         model.fit(trData, trLabel)
 
         predL = model.predict(teData)
+        print np.mean(predL), np.std(predL)
         accu = accuracy_score(teLabel, predL)
 
         f.writelines(str(ind) + '\t' + str(accu)+'\n')
