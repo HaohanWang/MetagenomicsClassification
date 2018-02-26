@@ -22,6 +22,7 @@
 # run the script
 
 /home/haohanw/python2.7/bin/python /home/haohanw/metaGenomicsClustering/classification/trainTestClassifier.py mellon_high original
-# /home/haohanw/python2.7/bin/python /home/haohanw/metaGenomicsClustering/classification/trainTestClassifier.py mellon_high ico
+/home/haohanw/python2.7/bin/python /home/haohanw/metaGenomicsClustering/classification/trainTestClassifier.py mellon_high ico
+/home/haohanw/python2.7/bin/python /home/haohanw/metaGenomicsClustering/classification/trainTestClassifier.py mellon_high kmer
 # /home/haohanw/python2.7/bin/python /home/haohanw/metaGenomicsClustering/classification/trainTestClassifier.py mellon_low kmer
 # /home/haohanw/python2.7/bin/python /home/haohanw/metaGenomicsClustering/classification/trainTestClassifier.py mellon_low ico
