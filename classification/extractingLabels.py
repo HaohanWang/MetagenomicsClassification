@@ -3,9 +3,12 @@ __author__ = 'Haohan Wang'
 import numpy as np
 
 def extractingLabels():
-    filenames = ['mellon_low_contamination_1', 'mellon_low_contamination_2', 'mellon_low_contamination_3',
-                 'mellon_low_contamination_4', 'mellon_low_contamination_5', 'mellon_low_contamination_6',
-                 'mellon_low_contamination_7', 'mellon_low_contamination_8', 'mellon_low_contamination_9']
+    # filenames = ['mellon_low_contamination_1', 'mellon_low_contamination_2', 'mellon_low_contamination_3',
+    #              'mellon_low_contamination_4', 'mellon_low_contamination_5', 'mellon_low_contamination_6',
+    #              'mellon_low_contamination_7', 'mellon_low_contamination_8', 'mellon_low_contamination_9']
+
+    filenames = ['mellon_high_contamination_1', 'mellon_high_contamination_2', 'mellon_high_contamination_3',
+                 'mellon_high_contamination_4']
 
     m = {}
 
