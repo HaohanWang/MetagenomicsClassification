@@ -57,7 +57,7 @@ def trainValidate(dataCate, featureCate):
         teData = data[s:, :]
         teLabel = label[s:]
 
-        model = SVC(class_weight='balanced', max_iter=10000)
+        model = SVC(class_weight='balanced', max_iter=100, tol=1.0)
         model.fit(trData, trLabel)
 
         predL = model.predict(teData)
