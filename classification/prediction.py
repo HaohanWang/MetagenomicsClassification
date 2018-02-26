@@ -28,7 +28,7 @@ def predictingEnsemble(data, lm):
         if i == 0:
             result = np.array(lm[i].predict(data))
         else:
-            result = np.append(result, np.array(lm[i].predict(data), 1))
+            result = np.append(result, np.array(lm[i].predict(data)), 1)
     predict = stats.mode(result, 1)[0].reshape(result.shape[0])
     return predict
 
