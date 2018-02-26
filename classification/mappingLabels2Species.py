@@ -27,7 +27,7 @@ def collectPredictionResults(dataCate):
         text = [line.strip() for line in open('predictionResult_'+ dataCate + '_ico_' + str(ind) + '.txt')]
         for line in text:
             items = line.split('\t')
-            result[items[0]] = mappingDic[int(items[1])]
+            result[items[0]] = mappingDic[int(float(items[1]))]
 
         text = [line.strip() for line in open('/home/haohanw/metagenomics/Kaiju/' + dataCate + '_contamination_' + str(ind) + '.kaiju.assign')]
 
