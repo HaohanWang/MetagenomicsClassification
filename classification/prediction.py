@@ -20,19 +20,31 @@ def trainingEnsemble(data, label):
         l.append(model)
     return l
 
-def predictingEnsemble(data, lm):
+def predictingWithEnsemble(data, lm):
     from scipy import stats
 
     result = None
     for i in range(len(lm)):
         if i == 0:
-            result = np.array(lm[i].predict(data))
+            result = np.array(lm[i].predict(data)).reshape([data.shape[0], 1])
         else:
-            result = np.append(result, np.array(lm[i].predict(data)), 1)
+            result = np.append(result, np.array(lm[i].predict(data)).reshape([data.shape[0], 1]), 1)
     predict = stats.mode(result, 1)[0].reshape(result.shape[0])
     return predict
 
-
+def predictingEnsemble(data, lm):
+    batchSize = 10000
+    s = data.shape[0]
+    nb = s/batchSize
+    r = []
+    for i in range(nb):
+        dataTmp = data[i*batchSize:(i+1)*batchSize,:]
+        predict = predictingWithEnsemble(dataTmp, lm)
+        if i == 0:
+            r = predict
+        else:
+            r = np.append(r, predict)
+    return r
 
 def constructData(ind, dataCate, featureCate):
     if featureCate == 'kmer':

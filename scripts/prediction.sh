@@ -22,4 +22,4 @@
 # run the script
 
 /home/haohanw/python2.7/bin/python /home/haohanw/metaGenomicsClustering/classification/prediction.py mellon_high ico
-/home/haohanw/python2.7/bin/python /home/haohanw/metaGenomicsClustering/classification/prediction.py mellon_low ico
+# /home/haohanw/python2.7/bin/python /home/haohanw/metaGenomicsClustering/classification/prediction.py mellon_low ico
