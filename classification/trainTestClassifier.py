@@ -10,8 +10,10 @@ from sklearn.metrics import accuracy_score
 def constructData(ind, dataCate, featureCate):
     if featureCate == 'kmer':
         features = np.load('/home/haohanw/metagenomics/kmer/'+dataCate + '_contamination_' + str(ind) + '.npy')
-    else:
+    elif featureCate == 'ico':
         features = np.load('/home/haohanw/metagenomics/ico/'+dataCate + '_contamination_' + str(ind) + '.npy')
+    else:
+        features = np.load('/home/haohanw/metagenomics/original/'+dataCate + '_contamination_' + str(ind) + '.npy')
 
     sample2ind = {}
     ind2sample = [line.strip() for line in open('/home/haohanw/metagenomics/index2sampleID_'+dataCate + '_contamination_'+str(ind)+'_filterMouse.txt')]
@@ -57,7 +59,7 @@ def trainValidate(dataCate, featureCate):
         teData = data[s:, :]
         teLabel = label[s:]
 
-        model = SVC(class_weight='balanced', max_iter=100, tol=1.0)
+        model = SVC(class_weight='balanced', max_iter=10000)
         model.fit(trData, trLabel)
 
         predL = model.predict(teData)
