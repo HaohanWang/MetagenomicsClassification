@@ -61,7 +61,7 @@ def crossValidate(dataCate, featureCate, modelCate):
     for ind in dataSet:
         data, label = constructData(ind, dataCate, featureCate)
 
-        scores = cross_val_score(model, data, label, cv=5)
+        scores = cross_val_score(model, data, label, cv=3)
 
         f.writelines(str(ind) + '\t' + str(scores)+'\n')
 
