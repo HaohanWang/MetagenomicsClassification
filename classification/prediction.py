@@ -13,6 +13,7 @@ def trainingEnsemble(data, label):
     nb = s/batchSize
     l = []
     for i in range(nb):
+        print 'training on batch', i, 'out of', nb
         model = SVC(class_weight='balanced', max_iter=10000)
         dataTmp = data[i*batchSize:(i+1)*batchSize,:]
         labelTmp = label[i*batchSize:(i+1)*batchSize]
@@ -38,6 +39,7 @@ def predictingEnsemble(data, lm):
     nb = s/batchSize
     r = []
     for i in range(nb):
+        print 'testing on batch', i, 'out of', nb
         dataTmp = data[i*batchSize:(i+1)*batchSize,:]
         predict = predictingWithEnsemble(dataTmp, lm)
         if i == 0:
