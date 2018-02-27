@@ -91,30 +91,31 @@ def constructData(ind, dataCate, featureCate):
 
     return data, label, reData, remainingLabels
 
-def trainValidate(dataCate, featureCate):
-    if dataCate == 'mellon_high':
-        dataSet = xrange(1, 5)
-    elif dataCate == 'mellon_low':
-        dataSet = xrange(1, 10)
-    elif dataCate == 'smith_low':
-        dataSet = xrange(1, 30)
-    else:
-        dataSet = []
+def trainValidate(dataCate, featureCate, ind):
+    # if dataCate == 'mellon_high':
+    #     dataSet = xrange(1, 5)
+    # elif dataCate == 'mellon_low':
+    #     dataSet = xrange(1, 10)
+    # elif dataCate == 'smith_low':
+    #     dataSet = xrange(1, 30)
+    # else:
+    #     dataSet = []
 
-    for ind in dataSet:
-        f = open('predictionResult_'+ dataCate + '_' + featureCate + '_' + str(ind) + '.txt', 'w')
-        data, label, reData, reLabels = constructData(ind, dataCate, featureCate)
+    #for ind in dataSet:
+    f = open('predictionResult_'+ dataCate + '_' + featureCate + '_' + str(ind) + '.txt', 'w')
+    data, label, reData, reLabels = constructData(ind, dataCate, featureCate)
 
-        lm = trainingEnsemble(data, label)
+    lm = trainingEnsemble(data, label)
 
-        predL = predictingEnsemble(reData, lm)
+    predL = predictingEnsemble(reData, lm)
 
-        for i in range(len(reLabels)):
-            f.writelines(reLabels[i]+'\t' + str(predL[i]) + '\n')
+    for i in range(len(reLabels)):
+        f.writelines(reLabels[i]+'\t' + str(predL[i]) + '\n')
 
-        f.close()
+    f.close()
 
 if __name__ == '__main__':
     dataCate = sys.argv[1]
     featureCate = sys.argv[2]
-    trainValidate(dataCate, featureCate)
+    ind = int(sys.argv[3])
+    trainValidate(dataCate, featureCate, ind)
