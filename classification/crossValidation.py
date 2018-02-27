@@ -49,9 +49,9 @@ def crossValidate(dataCate, featureCate, modelCate):
     else:
         dataSet = []
 
-    if dataCate == 'nb':
+    if modelCate == 'nb':
         model = GaussianNB()
-    elif dataCate == 'lr':
+    elif modelCate == 'lr':
         model = LogisticRegression(class_weight='balanced')
     else:
         model = SVC(class_weight='balanced', max_iter=10000)
