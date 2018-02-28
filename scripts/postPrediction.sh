@@ -21,5 +21,5 @@
 
 # run the script
 
-/home/haohanw/python2.7/bin/python /home/haohanw/metaGenomicsClustering/classification/mappingLabels2Species.py mellon_high
-# /home/haohanw/python2.7/bin/python /home/haohanw/metaGenomicsClustering/classification/mappingLabels2Species.py mellon_low
+# /home/haohanw/python2.7/bin/python /home/haohanw/metaGenomicsClustering/classification/mappingLabels2Species.py mellon_high
+/home/haohanw/python2.7/bin/python /home/haohanw/metaGenomicsClustering/classification/mappingLabels2Species.py mellon_low
